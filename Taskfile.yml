@@ -1,0 +1,14 @@
+version: '3'
+tasks:
+  frontend:
+    desc: Run the frontend
+    cmds:
+      - cd ./expense_frontend/expense-app && npm start
+  backend:
+    desc: Run the backend
+    cmds:
+      - cd ./expense_app && go run main.go
+  concurrent_run:
+    desc: Run frontend and backend concurrently
+    cmds:
+      - sh -c 'task frontend & task backend'
